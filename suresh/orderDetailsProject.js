@@ -1,13 +1,13 @@
-var items = {
-  Shoes: 12,
-  Pants: 14,
-  Dress: 18,
-	Hat: 13,
-	Socks: 3,
-  Bandaid: 1000
+var ITEMS = {
+  shoes: 12,
+  pants: 14,
+  dress: 18,
+  hat: 13,
+  socks: 3,
+  bandaid: 1000
 }
 
-var tax = 0.09; 
+var TAX = 0.09; 
 
 var orderDetails = [];
 function customerBought(customer, orderedItem, qty) {
@@ -18,14 +18,14 @@ function customerBought(customer, orderedItem, qty) {
   })
 }
 
-customerBought('Dan', 'Shoes', 1);
-customerBought('Dan', 'Pants', 2);
-customerBought('Sally', 'Dress', 1);
-customerBought('Sally', 'Socks', 2);
-customerBought('Jon', 'Hat', 1);
-customerBought('Jon', 'Socks', 5);
-customerBought('Dan', 'Bandaid', 1);
-customerBought('Jon', 'Bandaid', 5);
+customerBought('Dan', 'shoes', 1);
+customerBought('Dan', 'pants', 2);
+customerBought('Sally', 'dress', 1);
+customerBought('Sally', 'socks', 2);
+customerBought('Jon', 'hat', 1);
+customerBought('Jon', 'socks', 5);
+customerBought('Dan', 'bandaid', 1);
+customerBought('Jon', 'bandaid', 5);
 
 console.log(orderDetails);
 
@@ -40,7 +40,8 @@ function noOfPeopleScannedBefore(customer, orderDetails) {
 console.log('Number of People scanned before Jon: ' + noOfPeopleScannedBefore('Jon', orderDetails));
 
 function noOfPeopleBoughtItem(item, orderDetails) {
-	var noOfPeople = 0;
+  var noOfPeople = 0;
+
 	for (var i = 0; i < orderDetails.length; i++) {
   	if ( orderDetails[i].orderedItem === item) {
     	noOfPeople += 1;
@@ -49,10 +50,11 @@ function noOfPeopleBoughtItem(item, orderDetails) {
   return noOfPeople;
 }
 
-console.log('Number of People bought Socks: ' + noOfPeopleBoughtItem('Socks', orderDetails));
+console.log('Number of People bought Socks: ' + noOfPeopleBoughtItem('socks', orderDetails));
 
 function totalQtySold(orderDetails) {
-	var totalQty = 0;
+  var totalQty = 0;
+
 	for (var i = 0; i < orderDetails.length; i++) {
   	totalQty += orderDetails[i].qty;
   }
@@ -70,13 +72,14 @@ function verifyItemBoughtByCustomer(customer, item, orderDetails) {
   return false;
 }
 
-console.log('Does Sally buy a Dress: ' + verifyItemBoughtByCustomer('Sally', 'Dress', orderDetails));
-console.log('Does Dan buy a Dress: ' + verifyItemBoughtByCustomer('Dan', 'Dress', orderDetails));
+console.log('Does Sally buy a Dress: ' + verifyItemBoughtByCustomer('Sally', 'dress', orderDetails));
+console.log('Does Dan buy a Dress: ' + verifyItemBoughtByCustomer('Dan', 'dress', orderDetails));
 
 function totalAmount(orderDetails) {
-	var total = 0;
+  var total = 0;
+
 	for (var i = 0; i < orderDetails.length; i++) {
-  	total += orderDetails[i].qty * items[orderDetails[i].orderedItem];
+  	total += orderDetails[i].qty * ITEMS[orderDetails[i].orderedItem];
   }
   return total;
 }
@@ -84,18 +87,19 @@ console.log('Total amount before tax:' + totalAmount(orderDetails));
 
 var totalPriceAfterTax = function (tax, totalAmountBeforeTax, orderDetails, customer) {
   var totalPrice = totalAmountBeforeTax(orderDetails, customer);
-  return totalPrice + totalPrice * tax; 
+  return totalPrice + (totalPrice * tax); 
 }
 
-console.log('Total sale amount after tax:' + totalPriceAfterTax(tax, totalAmount, orderDetails));
+console.log('Total sale amount after tax:' + totalPriceAfterTax(TAX, totalAmount, orderDetails));
 
 function totalAmountPerCustomer(orderDetails, customer) {
   var total = 0;
+
   for (var i = 0; i < orderDetails.length; i++) {
     if (orderDetails[i].customer === customer)
-    total += orderDetails[i].qty * items[orderDetails[i].orderedItem];
+    total += orderDetails[i].qty * ITEMS[orderDetails[i].orderedItem];
   }
   return total;
 }
 
-console.log('Total amount after tax for Sally:' + totalPriceAfterTax(tax, totalAmountPerCustomer, orderDetails, 'Sally')); 
+console.log('Total amount after tax for Sally:' + totalPriceAfterTax(TAX, totalAmountPerCustomer, orderDetails, 'Sally')); 
