@@ -103,3 +103,36 @@ function totalAmountPerCustomer(orderDetails, customer) {
 }
 
 console.log('Total amount after tax for Sally:' + totalPriceAfterTax(TAX, totalAmountPerCustomer, orderDetails, 'Sally')); 
+
+function totalAmountDest(orderDetails) {
+  var total = 0;
+
+	for (var i = 0; i < orderDetails.length; i++) {
+  	var { orderedItem, qty } = orderDetails[i];
+    
+	  total += qty * ITEMS[orderedItem];
+  }
+  return total;
+}
+
+console.log('Total amount before tax with Dest:' + totalAmountDest(orderDetails));
+
+var totalPriceAfterTax = function (tax, totalAmountBeforeTax, orderDetails, customer) {
+  var totalPrice = totalAmountBeforeTax(orderDetails, customer);
+  return totalPrice + (totalPrice * tax); 
+}
+
+console.log('Total sale amount after tax:' + totalPriceAfterTax(TAX, totalAmountDest, orderDetails));
+
+function totalAmountPerCustomerDest(orderDetails, cust) {
+  var total = 0;
+
+  for (var i = 0; i < orderDetails.length; i++) {
+  	var { customer, orderedItem, qty } = orderDetails[i];
+    if (customer === cust)
+    total += qty * ITEMS[orderedItem];
+  }
+  return total;
+}
+
+console.log('Total amount after tax for Sally:' + totalPriceAfterTax(TAX, totalAmountPerCustomerDest, orderDetails, 'Sally')); 
