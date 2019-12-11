@@ -52,6 +52,11 @@ const combineArray = (arr,arr1) => (arr.concat(arr1))
 //};
 console.log(combineArray(arr,arr1));
 
+/*** Use for Loop for combining arrays ***/
+const combArray = (arr, arr1) => {
+
+}
+
 const alternateArray = (arr,arr1) => {
     let altArray = [];
     for (let i=0; i<arr.length; i++) {
@@ -131,7 +136,9 @@ var arr3 = [
 const totalSocks = arr => {
     let socks = 0;
     for (let i=0; i<arr.length; i++){
-        socks += arr[i].quantity;
+        if (arr[i].type === 'socks') {
+            socks += arr[i].quantity;
+        }
     }
     return socks;
 }
@@ -139,11 +146,16 @@ console.log("Total socks " +totalSocks(arr3));
 
 /***** Using forEach *****/
 let totSocks = 0;
+function getSocksCount(addSocks){
+    arr3.forEach((addSocks) => {
+        if (addSocks.type === 'socks') {
+            totSocks += addSocks.quantity;
+        }
+    });
+    return totSocks;
+};
+console.log("Total no. of socks using forEach function " +getSocksCount(arr3));
 
-arr3.forEach((addSocks) => {
-    totSocks += addSocks.quantity;
-    console.log(totSocks);
-}); //Can we return the final count of socks???
 // let i=0 or i = 0 ????
 
 var str = "supercalifragilisticexpialidocious";
@@ -152,7 +164,7 @@ var str = "supercalifragilisticexpialidocious";
 const retACount = str => {
     let aCount=0;
     for (let i=0; i<str.length; i++){
-        if(str.charAt(i)==='a'){
+        if(str[i].indexOf('a') != -1){
             aCount += 1;
         }
     }
@@ -160,12 +172,24 @@ const retACount = str => {
 }
 console.log("A Count in For loop is " + retACount(str));
 
+/*** Refactor to check any single character ***/
+const retAnyCharCount = (str,ch) => {
+    let anyCount=0;
+    for (let i=0; i<str.length; i++){
+        if(str[i].indexOf(ch) != -1){
+            anyCount += 1;
+        }
+    }
+    return anyCount;
+}
+console.log("Any Char Count in For loop is " + retAnyCharCount(str, 'i'));
+
 /*** Do Loop for returning 'A' letters count ***/
 const retACountDoLoop = str => {
     let aCount=0;
     let i=0;
     do {
-        if(str.charAt(i)==='a'){
+        if(str[i].indexOf('a') != -1){
             aCount += 1;
         }
         i++;
@@ -177,13 +201,14 @@ console.log("A Count in Do loop is " + retACountDoLoop(str));
 
 /*** Write a function that returns the number of vowels in the str ***/
 const vowelCount = str => {
-    let vowel=0;
+    let vowelCount=0;
+    let vowelObj = 'aeiou';
     for (let i=0; i<str.length; i++){
-        if(`aeiou`.includes(str.charAt(i))){
-            vowel += 1;
+        if(vowelObj.indexOf(str[i]) != -1){
+            vowelCount += 1;
         }
     }
-    return vowel;
+    return vowelCount;
 }
 console.log("Vowel Count in For loop is " +vowelCount(str));
 
