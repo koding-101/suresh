@@ -1,0 +1,52 @@
+1) Without using any built in functions, write a function to filter an array for unique values
+  Input: [1,1,2,3,5,7,7,9]
+  Output: [1,2,3,5,7,9]
+
+2) Write a function to return all even numbers from a nested array.
+  Input: [[1, 2, 3], [4, 5, 6], [7, 8], [9, 10, 11, 12]]
+  Output: [2,4,6,8,10,12]
+
+3) Write a function to take two parameters (rows, columns) and return a nested array where rows is the number of nested arrays 
+and columns is the number of items in each nested array. The value within each nested array should alternate values of `X` and `O`
+  Input: function(2, 4)
+  Output: [[X,O,X,O], [X,O,X,O]]
+
+
+
+var userProfile = {
+    name: "Bob",
+    additionalData: {
+        occupation: "Dev",
+        favoriteHobbies: ["Eating", "Coding", "Sleeping],
+        moreDetails: {
+            favoriteBasketballTeam: "Warriors",
+            numberOfSiblings: 2,
+            isYoungest: true,
+            hometown: {
+                city: "San Jose",
+                state: "CA",
+            },
+            citiesLivedIn: ["SF", "Portland", "New York"]
+        }
+    }
+};
+
+4) Given `userProfile` write a function to return a value from within userProfile
+  Input: function(citiesLivedIn)
+  Output: ["SF", "Portland", "New York"]
+
+5) Write a function to add new details to `moreDetails` object. The function will accept two values (key, value). 
+The function will return the `moreDetails` object.
+  Input: function("isCool", true)
+  Output: {
+            favoriteBasketballTeam: "Warriors",
+            numberOfSiblings: 2,
+            isYoungest: true,
+            hometown: {
+                city: "San Jose",
+                state: "CA",
+            },
+            citiesLivedIn: ["SF", "Portland", "New York"],
+            isCool: true
+        }
+
