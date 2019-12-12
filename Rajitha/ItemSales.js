@@ -125,8 +125,9 @@ console.log("Total price after tax: " +totalItemPriceAfterTax());
  * What is the total amount after tax for Sally? (any customer)
  **************************************************************/
 var custItemData = [];
-const getCustomerTotalAmountAfterTax = (customer) => {
-    let totalCustomerAmount = 0;
+const getCustomerTotalAmountAfterTax = (customer, requestedAmount) => {
+    let totalCustomerAmountBeforeTax = 0;
+    let totalCustomerAmountAfterTax = 0;
     let j=0;
     for (let i=0;i<customerSales.length;i++){
         if (customerSales[i].Customer === customer){
@@ -136,10 +137,15 @@ const getCustomerTotalAmountAfterTax = (customer) => {
     for (let k=0;k<custItemData.length;k++){
         for (let l=0;l<items.length;l++){
             if(custItemData[k].Order === items[l].Item){
-                totalCustomerAmount += ((custItemData[k].Quantity * items[l].Price) + (custItemData[k].Quantity * items[l].Price * (tax[0].Tax/100)));
+                totalCustomerAmountBeforeTax += custItemData[k].Quantity * items[l].Price;
             }
         }
     }
-    return totalCustomerAmount;
+    totalCustomerAmountAfterTax = (totalCustomerAmountBeforeTax + totalCustomerAmountBeforeTax * (tax[0].Tax/100));
+    if (requestedAmount === 'AfterTax'){
+        return totalCustomerAmountAfterTax;}
+    else {
+        return totalCustomerAmountBeforeTax;
+    }
 }
-console.log("Total amount for Sally is: " +getCustomerTotalAmountAfterTax('Sally'));
+console.log("Total amount for Sally is: " +getCustomerTotalAmountAfterTax('Sally','AfterTax'));
