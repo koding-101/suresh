@@ -33,7 +33,7 @@ console.log(customerSales);
 const scanItemsBeforeCustomer = (customer,order) => {
     let i=0;
     do {
-        if (customerSales[i].Customer == customer && customerSales[i].Order) {
+        if (customerSales[i].Customer == customer && customerSales[i].Order === order) {
             return i++;
         }
         i++;
