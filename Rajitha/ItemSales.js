@@ -30,16 +30,17 @@ console.log(customerSales);
 /***********************************************************
  *How many items were scanned before Jon's Hat got scanned?
  ***********************************************************/
-const scanItemsBeforeJon = () => {
+const scanItemsBeforeCustomer = (customer,order) => {
     let i=0;
     do {
-        if (customerSales[i].Order != 'Hats'){}
-        else{return i++;}
+        if (customerSales[i].Customer == customer && customerSales[i].Order) {
+            return i++;
+        }
         i++;
     }
     while (i<customerSales.length)
 };
-console.log("Number of items scanned before Jon are " +scanItemsBeforeJon());
+console.log("Number of items scanned before Jon are " +scanItemsBeforeCustomer('Jon','Hat'));
 
 /*********************************************
  *      How many people bought socks
