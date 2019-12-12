@@ -99,8 +99,9 @@ const itemizedPriceSummary = () => {
                 totalSingleOrderCount += customerSales[i].Quantity;
             }
         }
-        let totalItemPrice = ((totalSingleOrderCount * items[j].Price) + (totalSingleOrderCount * items[j].Price)* (tax[0].Tax/100));
-        itemsPrice.push({'TotalItemQuantity': totalSingleOrderCount, 'TotalPrice': totalItemPrice});
+        let totalItemPriceBeforeTax = totalSingleOrderCount * items[j].Price;
+        let totalItemPriceAfterTax = ((totalSingleOrderCount * items[j].Price) + (totalSingleOrderCount * items[j].Price)* (tax[0].Tax/100));
+        itemsPrice.push({'ItemQuantity': totalSingleOrderCount, 'PriceBeforeTax': totalItemPriceBeforeTax, 'PriceAfterTax': totalItemPriceAfterTax});
         totalSingleOrderCount = 0;
     }
     return items;
@@ -113,7 +114,7 @@ console.log(itemsPrice);
 const totalItemPriceAfterTax = () => {
     let totalItemPrice=0;
     for (let i=0;i<itemsPrice.length;i++){
-        totalItemPrice += itemsPrice[i].TotalPrice;
+        totalItemPrice += itemsPrice[i].PriceAfterTax;
     }
     return totalItemPrice;
 }
