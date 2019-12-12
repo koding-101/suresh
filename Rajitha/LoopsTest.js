@@ -8,7 +8,7 @@ const arr = [1,2,3,4,5];
 
 //Return Odd Numbers
 function oddNumbers(arr) {
-    let oddArray = [];
+    const oddArray = [];
     for (let i=0; i<arr.length; i++) {
         if (arr[i]%2 != 0) {
             oddArray.push(arr[i]);
@@ -20,7 +20,7 @@ console.log(oddNumbers(arr));
 
 //Return Even Numbers
 function evenNumbers(arr){
-    let evenArray = [];
+    const evenArray = [];
     for (let i=0; i<arr.length; i++) {
         if (arr[i]%2 == 0) {
             evenArray.push(arr[i]);
@@ -32,7 +32,7 @@ console.log(evenNumbers(arr));
 
 //Return Reverse Array
 function arrayBackward(arr){
-    let revArray = [];
+    const revArray = [];
     for (let i=arr.length-1; i>=0; i--) {
         revArray.push(arr[i]);
     }
@@ -64,7 +64,7 @@ const alternateArray = (arr,arr1) => {
     }
     return altArray;
 }
-console.log(alternateArray(arr,arr1));
+console.log("Alternate Array " +alternateArray(arr,arr1));
 
 /**************************************************************
  * write a function that returns all even number - [2,8,10,6]
@@ -72,9 +72,9 @@ console.log(alternateArray(arr,arr1));
  * **************************************************************/
 const arr2 = [2,8,1,10,5,6];
 
-const evenOddArrays = arr => {
-    let evenArray = [];
-    let oddArray = [];
+const evenOddArrays = (arr, arraytype) => {
+    const evenArray = [];
+    const oddArray = [];
     for (let i=0; i<arr.length; i++) {
         if (arr[i]%2 == 0) {
             evenArray.push(arr[i]);
@@ -82,20 +82,40 @@ const evenOddArrays = arr => {
             oddArray.push(arr[i]);
         }
     }
-    console.log(evenArray);
-    console.log(oddArray);
-    return [evenArray, oddArray];
+    if (arraytype === 'odd'){
+        return oddArray;
+    }
+    else if (arraytype === 'even'){
+        return evenArray;
+    }
+    else {
+        return evenArray;
+    }
 };
-
-console.log(evenOddArrays(arr2)); //is there a way to return two arrays in a single function? multi-dimensinal array?
+console.log("Return Choice array " +evenOddArrays(arr2));
 
 /**************************************************************
  * Using DO loop
  * write a function that returns all even number - [2,8,10,6]
  * write a function that returns all odd numbers - [1,5]
  * **************************************************************/
+const evenArrayWithoutWhileOnly = arr => {
+    const evenArray = [];
+    let i=0;
+    while (i<=arr.length){
+        if (arr[i]%2 == 0) {
+            evenArray.push(arr[i]);
+        }
+        i++;
+    }
+    return evenArray;
+}
+console.log("Using While loop without Do");
+console.log(evenArrayWithoutWhileOnly(arr2));
+
+/******* Do Loop - Even Array ********/
 const evenArrayDoLoop = arr => {
-    let evenArray = [];
+    const evenArray = [];
     let i = 0;
     do {
         if (arr[i]%2 == 0) {
@@ -106,11 +126,12 @@ const evenArrayDoLoop = arr => {
     while (i<=arr.length);
     return evenArray;
 }
+console.log("Using Do loop " +evenArrayDoLoop(arr2)); //Why does this not print in array format?
 console.log(evenArrayDoLoop(arr2));
 
 /******* Do Loop - Odd Array ********/
  const oddArrayDoLoop = arr => {
-    let oddArray = [];
+    const oddArray = [];
     let i = 0;
     do {
         if (arr[i]%2 != 0) {
@@ -214,15 +235,15 @@ console.log("Vowel Count in For loop is " +vowelCount(str));
 
 /*** Do loop for vowel count ***/
 const vowelCountDoLoop = str => {
-    let vowel=0;
+    let countOfVowels=0;
     let i=0;
     do{
         if(`aeiou`.includes(str.charAt(i))){
-            vowel += 1;
+            countOfVowels += 1;
         }
         i++;
     }
     while(i<str.length);
-    return vowel;
+    return countOfVowels;
 }
-console.log("Vowel Count in Do Loop is " +vowelCountDoLoop(str));
+console.log("Vowel Count in Do Loop is \n" +vowelCountDoLoop(str));
