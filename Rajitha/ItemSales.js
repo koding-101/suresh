@@ -31,32 +31,26 @@ console.log(customerSales);
  *How many items were scanned before Jon's Hat got scanned?
  ***********************************************************/
 const scanItemsBeforeCustomer = (customer,order) => {
-    let i=0;
-    do {
+    for(let i=0; i<customerSales.length; i++){
         if (customerSales[i].Customer == customer && customerSales[i].Order === order) {
             return i++;
         }
-        i++;
     }
-    while (i<customerSales.length)
-};
+}
 console.log("Number of items scanned before Jon are " +scanItemsBeforeCustomer('Jon','Hat'));
 
 /*********************************************
  *      How many people bought socks
  *********************************************/
 const socksCustomerCount = (order) => {
-    let i=0;
     let customerCount = 0;
-    do {
+    for(let i=0; i<customerSales.length; i++){
         if (customerSales[i].Order == order){
             customerCount++;
         }
-        i++;
     }
-    while (i<customerSales.length)
     return customerCount;
-};
+}
 console.log("Number of people who bought socks are " +socksCustomerCount('Socks'));
 
 /*********************************************
@@ -68,7 +62,7 @@ const totalSoldQuantity = () => {
         totalQuantity += customerSales[i].Quantity;
     }
     return totalQuantity;
-};
+}
 console.log("Total Quantity Sold " +totalSoldQuantity());
 
 /*********************************************
@@ -79,7 +73,7 @@ const checkIfDressBought = (customer,order) => {
         if((customerSales[i].Customer === customer) && (customerSales[i].Order === order))
             return true;
     }
-};
+}
 console.log("Did Sally buy a Dress: " );
 console.log(checkIfDressBought('Sally','Dress')?"Yes":"No");
 
@@ -101,7 +95,7 @@ const itemizedPriceSummary = () => {
             }
         }
         let totalItemPriceBeforeTax = totalSingleOrderCount * items[j].Price;
-        let totalItemPriceAfterTax = ((totalSingleOrderCount * items[j].Price) + (totalSingleOrderCount * items[j].Price)* (tax[0].Tax/100));
+        let totalItemPriceAfterTax = (totalItemPriceBeforeTax + (totalItemPriceBeforeTax * (tax[0].Tax/100)));
         itemsPrice.push({'ItemQuantity': totalSingleOrderCount, 'PriceBeforeTax': totalItemPriceBeforeTax, 'PriceAfterTax': totalItemPriceAfterTax});
         totalSingleOrderCount = 0;
     }
