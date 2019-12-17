@@ -80,16 +80,16 @@ var arr = [1,2,3,4,5];
 
 function combineArr(array1,array2){
   var combinedArr =[];
-   combinedArr= array1;
-  for(var i=0;i<array2.length;i++){
-    combinedArr.push(array2[i]);
+
+	combinedArr = array1.concat(array2);
+  return combinedArr
   }
-  return combinedArr;
-}
+
+console.log(combineArr(arr1, arr));
 
 function combineArrWhile(array1,array2){
   var combinedArr =[];
-   combinedArr= array1;
+   combinedArr= array1.slice(0);
    var i=0;
    while(i<array2.length){
     combinedArr.push(array2[i]);
@@ -98,6 +98,7 @@ function combineArrWhile(array1,array2){
   return combinedArr;
 }
 
+console.log(combineArrWhile(arr1, arr));
 
 combineArr(arr, arr1);
 combineArrWhile(arr, arr1);
@@ -107,34 +108,38 @@ combineArrWhile(arr, arr1);
 function alternate(array1, array2){
   var maxLength = 0;
   var altArr=[];
-  if(array1.length >= array2.length){
-    maxLength = array1.length;
-  } else {
-    maxLength = array2.length;
-  }
+  maxLength= array1.length >= array2.length ? array1.length : array2.length;
   for (var i = 0; i < maxLength; i++) {
-    altArr.push(array1[i], array2[i]);
-}
+  	if(array1.length > i && array2.length > i){
+    	altArr.push(array1[i], array2[i]);
+    }else if(array1.length > i){
+    	altArr.push(array1[i]);
+    }else if(array2.length > i){
+    	altArr.push(array2[i]);
+    }
+	}
   return altArr;
 }
 
-  function alternateWhile(array1, array2){
-    var maxLength = 0;
-    var altArr=[];
-    if(array1.length >= array2.length){
-      maxLength = array1.length;
-    } else {
-      maxLength = array2.length;
-    }
-    console.log(maxLength);
-    var i=0;
-    while(i < maxLength){
-      altArr.push(array1[i], array2[i]);
-      i++;
-    }
-    return altArr;
-  }
+console.log(alternate(arr1, arr));
 
+function alternateWhile(array1, array2){
+  var maxLength = 0;
+  var altArr=[];
+  maxLength= array1.length >= array2.length ? array1.length : array2.length;
+  var i=0;
+  while(i < maxLength){
+    if(array1.length > i && array2.length > i){
+    altArr.push(array1[i], array2[i]);
+    }else if(array1.length > i){
+    altArr.push(array1[i]);
+    }else if(array2.length > i){
+    altArr.push(array2[i]);
+   }
+    i++;
+    }
+  return altArr;
+}
 alternate(arr, arr1);
 alternateWhile(arr, arr1);
 

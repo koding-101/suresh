@@ -1,49 +1,73 @@
-var inputArray = [1, 2, 3, 4, 5, 6];
+function indexOf(strArr, strNum) {
+  if (
+    typeof strArr === "string" &&
+    typeof strNum === "string" &&
+    strArr.length > strNum.length
+  ) {
+    var result = -1;
+    var strNumChecker = "";
+    var strNumIndex = 0;
 
-function indexOf(inputArray, value) {
-  for (var i = 0; i < inputArray.length; i++) {
-    if (inputArray[i] === value) {
-      return i;
+    for (var i = 0; i < strArr.length; i++) {
+      if (strArr[i] === strNum[strNumIndex]) {
+        if (result === -1) {
+          result = i;
+        }
+
+        if (strNumIndex === strNum.length - 1) {
+          return result;
+        }
+
+        strNumChecker += strNum[strNumIndex];
+        strNumIndex++;
+
+      } else if (result > -1) {
+        result = -1;
+        strNumChecker = "";
+        strNumIndex = 0;
+      }
+    }
+  } else if (Array.isArray(strArr)) {
+    for (var i = 0; i < strArr.length; i++) {
+      if (strArr[i] === strNum) {
+        return i;
+      }
     }
   }
+
+  return -1;
 }
 
-console.log(indexOf(inputArray, 5));
+console.log(indexOf(testString, "way"));
+console.log(indexOf(inputArray2, "this"));
+console.log(indexOf(inputArray, 56));
 
-var str = 'my%name%is%Shashi%Reddy%Tirumala%23';
+
+var stringTest = 'my%name%is%Shashi%Reddy%Tirumala%23'; //should return ["my", "name", "is", "Shashi", "Reddy", "Tirumala", "23"]
+var test1 = 'my%name%is%Shashi%Reddy%Tirumala%'; // should return "my", "name", "is", "Shashi", "Reddy", "Tirumala", ""]
+var test2 = 'name%is%Shashi%Reddy%Tirumala%23';// should return ["", "name", "is", "Shashi", "Reddy", "Tirumala", "23"]
+var test3 = '%name%is%%Shashi%Reddy%Tirumala%23';// expected ["", "name", "is", "", "Shashi", "Reddy", "Tirumala", "23"]
+var test4 = "aa"
+//console.log('actual split', test1.split('%'));
 
 function split(string, seperator) {
   var newArray = [];
-  var index = 0;
-  var spacing = [];
-  var wordIndex = 0;
-  for (var i = 0; i < string.length; i++) {
-    if (string[i] === seperator) {
-      spacing[index] = i;
-      index++
-    }
-  }
-  console.log('spacing', spacing);
-  var startIndex = 0;
-  for (var j = 0; j <= spacing.length; j++) {
-    var endIndex;
-    var word = '';
-    if (endIndex === string.length - 1) {
-      break;
-    }
-    endIndex = j == spacing.length ? string.length : spacing[j];
+  var ele = "";
 
-    for (var k = startIndex; k < endIndex; k++) {
-      word = word + string[k];
+  for (var i = 0; i < string.length; i++) {
+    if (string[i] != seperator) {
+      ele = ele + string[i];
+    } else if (i !== string.length - 1) {
+      newArray.push(ele);
+      ele = "";
+    } else {
+      newArray.push(ele);
     }
-    startIndex = endIndex + 1;
-    newArray[wordIndex] = word;
-    wordIndex++;
+
   }
   return newArray;
 }
-
-console.log(split(str, '%'));
+console.log(split(test1, '%'));
 
 const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
 function slice(arr, start, end = arr.length - 1) {
