@@ -34,15 +34,12 @@ const getUniqueArrayDoWhile = (arr) => {
   let j = 0;
   j = i+1;
   do {
-    if (arr[i] == arr[j]) {
-      j++;
-    }
-    else {
+    if (arr[i] != arr[j]) {
       if(newArray.indexOf(arr[i]) == -1) {
         newArray.push(arr[i]);
       }
-    j++;
     }
+    j++;
     i++;
   }
   while (i <= arr.length);
