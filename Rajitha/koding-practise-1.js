@@ -30,25 +30,26 @@ console.log(getUniqueArray([1,1,2,3,5,7,7,9]));
 //Using Do loop to check for more than one occurance of an element
 const getUniqueArrayDoWhile = (arr) => {
   let newArray = [];
-  let count = 0;
   let i = 0;
   let j = 0;
   j = i+1;
   do {
     if (arr[i] == arr[j]) {
-      count++;
       j++;
-    } else {
-      newArray.push(arr[i]);
-      j++;
+    }
+    else {
+      if(newArray.indexOf(arr[i]) == -1) {
+        newArray.push(arr[i]);
+      }
+    j++;
     }
     i++;
-    }
+  }
   while (i <= arr.length);
   return newArray;
 }
 
-console.log(getUniqueArrayDoWhile([1,1,1,1,2,2,3,5,7,7,7,9,10,10,11,12]));
+console.log(getUniqueArrayDoWhile([1,1,1,1,2,2,3,5,7,7,7,9,10,10,1,11,12]));
 
 //Using While loop
 const uniqueArray = (arr) => {
