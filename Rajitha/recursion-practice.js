@@ -2,17 +2,14 @@
 * Create a function to get the factoral of a number.
 * Input: factoral(5)  Output: 120
 ****************************************************/
-let fact = 1;
-const factorial = num => {
-  if (num > 1) {
-    fact = fact*num;
-    num--;
-    fact = factorial(num);
+var factorial = function(number) {
+  if (number <= 0) {
+    return 1;
+  } else {
+    return (number * factorial(number - 1));
   }
-  return fact;
 };
-
-console.log(factorial(7));
+factorial(6);
 
 /*********************************************************
 * Create a function to get the power of a number.
@@ -21,32 +18,28 @@ console.log(factorial(7));
 * Output: 32
 * reason: 2x2x2x2x2
 **********************************************************/
-let check = 1;
-let result = 1;
-const numPower = (num,exp) => {
-  if (check <= exp){
-    result = result * num;
-    check++;
-    result = numPower(num,exp);
+var numPower = function(num,exp) {
+  if (exp === 0){
+    return 1;
+  } else {
+    return num * numPower(num,exp-1);
   }
-  return result;
-}
-console.log(numPower(2,5));
+};
+numPower(2,5);
 
 /***************************************************
 * Reverse a string
 * Input: reverse("Recursion Sucks")
 * Output: "skcuS noisruceR"
 ****************************************************/
-let revString = '';
 const  reverseString = str => {
-  if (str.length > 0) {
-    revString = revString.concat(str.charAt(str.length - 1));
-    revString = reverseString(str.slice(0,str.length-1));
+  if (str === "") {
+    return "";
+  } else {
+    return reverseString(str.substr(1)) + str.charAt(0);
   }
-  return revString;
 }
-console.log(reverseString("Recursion Sucks"));
+reverseString("This is big bucket");
 
 /*************************************************************************
 * Given an array of numbers, find the max sum using elements that are not
