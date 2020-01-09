@@ -4,8 +4,9 @@ function indexOf(array, ele) {
   for (var i = 0; i < array.length; i++) {
     if (array[i] === ele) {
       return i;
-    }
+    } 
   }
+  return "element is not present"
 }
 
 console.log('Array - indexOf: ' + indexOf(array, 'b'));
@@ -16,14 +17,14 @@ console.log('String - indexOf: ' + indexOf(str, 'a'));
 
 var str = 'I%am%Learning%coding';
 
-function split(string, seperator) {
+function split(string, delimiter) {
   var newArray = [];
   var index = 0;
   var spacing = [];
   var wordIndex = 0;
   
   for (var i = 0; i < string.length; i++) {
-    if (string[i] === seperator) {
+    if (string[i] === delimiter) {
       spacing[index] = i;
       index++
     }
@@ -57,8 +58,10 @@ var pets = ['dog', 'cat', 'rabbit', 'chickens', 'fish'];
 function slice(input, start, end) {
   var slicedArray = [];
  
-  for (var i = start; i < end; i++) {
-  	slicedArray.push(input[i]);
+  for (var i = start; i < input.length-1; i++) {
+  	if (i <= end) {
+  		slicedArray.push(input[i]);
+    }
   }
   return slicedArray;
 }
@@ -70,8 +73,10 @@ var str = 'learning coding'
 function strSlice(input, start, end) {
   var slicedStr = '';
  
-  for (var i = start; i < end; i++) {
- 		slicedStr += input[i];
+  for (var i = start; i < input.length; i++) {
+    if (i <= end) {
+       slicedStr += input[i];
+    }
   }
   return slicedStr;
 }
@@ -85,7 +90,7 @@ function shift(arr) {
     shiftedArray[i] = arr[i+1];
   }
   arr = shiftedArray;
-  console.log(shiftedArray);
+  console.log(arr);
   return result;
 }
 

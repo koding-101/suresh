@@ -5,9 +5,8 @@ var arr = [1,2,3,4,5];
 //write a function that returns all odd numbers - [1,3,5]
 function oddNos (array) {
   var oddNums = [];
-  var arrLength = array.length;
 
-  for (var i = 0; i < arrLength; i++) {
+  for (var i = 0; i < array.length; i++) {
  	  if (array[i] % 2 !== 0) {
   	  oddNums.push(array[i]);
     }
@@ -101,6 +100,15 @@ function combinesArray(arr1, arr2) {
 }
  
 console.log("Combines array with For loop: ", combinesArray(arr, arr1));
+
+function combinesArray1(arr1, arr2) {
+	var combArr1 = [];
+
+  combArr1 = arr1.concat(arr2);
+  return combArr1;
+}
+ 
+console.log("Combines array with For loop: ", combinesArray1(arr, arr1));
 
 function combinesArrayWithWhile(arr1, arr2) {
 	var combArr = arr.slice();

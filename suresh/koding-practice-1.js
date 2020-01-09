@@ -28,7 +28,7 @@ var evenNos = array => {
     
   for(var i = 0; i < array.length; i++) {
     for(var j = 0; j < array[i].length; j++) {
-      if (array[i][j] !== '' && array[i][j] % 2 === 0) {
+      if (array[i][j] && array[i][j] % 2 === 0) {
         evenNo.push(array[i][j]);
       }
     }
