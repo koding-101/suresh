@@ -14,37 +14,43 @@ function factoral(no) {
 console.log(factoral(4));
  
 function factoral1(no) {
-  if (no <= 0) {
-    return 'invalid no';
-  } else {
-    return no * factoral1(no-1);
-  }
+  if (no < 0) {
+   return 'invalid number';
+  } else if (no === 0 || no === 1) {
+    return 1;
+    } else {
+      return no * factoral1(no-1);
+      }
 }
+
+console.log(factoral1(6));
  
-console.log(factoral(5));
- 
- /* 2) Create a function to get the power of a number. Multiply the first input x(second input) number of times 
+/* 2) Create a function to get the power of a number. Multiply the first input x(second input) number of times 
    Input: power(2, 5)
    Output: 32  
    reason: 2x2x2x2x2*/
  
 function power(x, y) {
-  if (y === 0) {
-    return 'invalid';
-  } else {
-    return x * power(x, y-1);
-  }
-}
+  if (x === 0 || y === 0) {
+    return 0;
+    } else if (x === 1 && y >1) {
+      return y;
+      } else if (x > 1 && y === 1) {
+        return x;
+        } else {
+          return x * power(x, y-1);
+          }
+ }
  
-console.log(power(2, 5));
- 
+ console.log(power(2, 5));
+
  /*3) Reverse a string
    Input: reverse("Recursion Sucks")
    Output: "skcuS noisruceR"*/
    
 function reverse(str) {
   if (str === "") {
-    return "";
+    return '';
   } else {
     return reverse(str.substr(1)) + str.charAt(0);
   }
