@@ -60,11 +60,15 @@ console.log(reverseRecur("Recursion Sucks"));
 maxSum([1, 2, 9, 4, 5, 0, 4, 11, 6])
 
 const maxSum = arr => {
-  let newArr = [];
-  for (let i = 0; i < arr.length - 1; i += 2) {
-    arr[i + 1] > arr[i] && arr[i + 1] > arr[i + 2] ? newArr.push(arr[i + 1]) : newArr.push(arr[i])
+	let incl = arr[0];
+  let excl = 0;
+  let excl_new = 0;
+  for (let i = 1; i < arr.length-1; i++) {
+  	excl_new = incl;
+    incl = Math.max(excl + arr[i], incl);
+    excl = excl_new;
   }
-  return newArr;
+  return incl;
 }
 
-console.log(maxSum([1, 2, 9, 4, 5, 0, 4, 11, 6]));
+console.log(maxSum([1,2,9,4,5,0,4,11,6]));
