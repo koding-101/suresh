@@ -3,6 +3,7 @@
 <html>
 
 <head>
+  <meta name="viewport" content="max-width=device-width, initial-scale=1.0">
   <title>
     My page
   </title>
@@ -26,30 +27,34 @@
       position: relative;
       top: 215px;
     }
+
     .textbox:hover {
-      box-shadow: 0px 5px 5px #dfe1e5 ;
+      box-shadow: 0px 5px 5px #dfe1e5;
     }
 
     .textbox {
       line-height: 34px;
       height: 34px !important;
-      width: 600px !important;
+      width: 50% !important;
       border-radius: 20px;
       background: #ffffff;
       font-size: 20px;
       border: 1px solid #dfe1e5;
     }
 
+    @media screen and (max-width:1024px) {
+      .textbox  {
+        width: 90% !important;
+      }
+    }
+
     .buttons {
-      width: 50%;
-      display: inline-block;
       position: relative;
       top: 250px;
-      left: 400px;
+      left: 10px;
       text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-      box-sizing: border-box;
+      vertical-align: middle;
+      margin: 0 auto;
     }
 
     .buttons button {
@@ -63,8 +68,11 @@
       font-family: arial, sans-serif;
       color: #5F6368;
       margin: 11px 4px;
+      display: inline-block;
+      max-width: 100%;
     }
-    button:hover{
+
+    button:hover {
       border-color: #5F6368;
     }
 
