@@ -1,0 +1,92 @@
+.topnav {
+  background-color: white;
+}
+.topnav a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 250;
+  opacity: 0.90;
+  margin: 8px;
+  top: 10px;
+  text-align: left;
+  position: relative;   
+}
+.topnav a:hover{
+  text-decoration: underline;
+}
+.nav-right {
+    float: right;
+  }
+.center {
+  margin: 10px auto 15px;
+  margin-top: 150px;
+  display: block;
+  width: 17%;
+}
+.textarea {
+  background-color: white;
+}
+.textarea input {
+  display: block;  
+  width: 33%;
+  padding: 12px 14px;
+  text-indent:20px;
+  margin:auto;
+  border: 1px solid rgb(199, 198, 198);
+  border-radius: 20px;
+  background-image: url('./searchicon.jpeg');
+  background-position: 5px 5px; 
+  background-size: 4%; 
+  background-repeat: no-repeat;
+}
+.textarea input:hover {
+  outline: none;
+  box-shadow: 0px 0px 4px rgb(164, 167, 168);
+  border: 1px solid rgb(199, 198, 198);
+  border-radius: 20px;
+}
+.buttonHolder {
+   text-align: center;
+   background-color: white;
+}
+.display {  
+  width: 140px;
+  padding: 10px 14px;
+  margin-top: 20px;
+  margin-right: 6px;
+  border-radius: 5px;
+  border: none;
+  color: rgb(68, 70, 70);
+  font-size: 14px;
+  background-color: rgb(236, 236, 240);
+}
+.buttonHolder input[type="submit"]:hover {
+  outline: none;
+  box-shadow: 0px 0px 4px rgb(164, 167, 168);
+  border: 1px solid rgb(199, 198, 198);
+  border-radius: 5px;  
+}
+.bottomnav {
+  background-color: rgb(233, 231, 231);
+  position: fixed;
+  overflow: hidden; 
+  width: 100%; 
+  bottom: 0px;  
+  border: 1px solid rgb(209, 208, 208);
+  opacity: 0.60;
+}
+.bottomnav a {
+  float: left;
+  display: block;  
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  padding: 14px 16px;
+  opacity: 1.00;
+  text-align: left;
+  position: relative;  
+}
+.bottomnav a:hover {
+  text-decoration: underline;
+}
