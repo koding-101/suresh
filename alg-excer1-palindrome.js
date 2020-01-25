@@ -4,12 +4,21 @@ function palindrome(input) {
 
   for (var i = 0; i < strLength/2; i++) {
     if (str[i] !== str[strLength-1-i]) {
-      return input + "- is not Palindrome";
+      return false;
     }
   }
-  return input + "- is Palindrome";
+  return true;
 }
 
-console.log(palindrome("SA as"));
+function checkPalindrome(palindrome) {
 
-console.log(palindrome(345543));
+  if (palindrome) {
+    console.log("Input value is palindrome")
+  } else {
+    console.log("Input value is not palindrome")
+  }
+}
+
+checkPalindrome(palindrome("SA a"));
+
+checkPalindrome(palindrome(345543));
