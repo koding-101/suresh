@@ -2,24 +2,23 @@
  * Determine whether a given input is a palindrome.
  ***************************************************/
 const palindrome = inputQuery => {
-  var query = '';
-  var count = 0;
-  
+
   //If number convert to string
   if (typeof inputQuery === "number"){
     inputQuery = inputQuery.toString();
   }
-  count = inputQuery.length;
-
-  //Convert string to lower case and remove special characters/empty spaces
-  inputQuery = inputQuery.toLowerCase().replace(/\W|_/g, "");
-  
-  //Iterate and store characters starting from end
-  //Compare final value with input
-  for (var i = count-1; i >= 0; i--){
-    query += inputQuery.charAt(i);
+  else {
+    inputQuery = inputQuery.toLowerCase().replace(/\W|_/g, "");   
   }
-  return((query === inputQuery)? true : false);
+  let count = inputQuery.length;
+  let midStrLen = (count - 1) / 2;
+
+  for (var i = 0; i <= midStrLen; i++){
+    if (inputQuery[i] !== inputQuery[count-1-i]){
+      return false;  
+    }
+  }
+  return true;
 }
 
 //Function to call main function and test different cases
@@ -29,6 +28,9 @@ const testPalindrome = (fn, query, expect) => {
 }
 
 //Call tester function with test cases and expected result
+testPalindrome(palindrome, "AABBAA", true);
+testPalindrome(palindrome, "AABAA", true);
+testPalindrome(palindrome, "A", true);
 testPalindrome(palindrome, 12*21, true);
 testPalindrome(palindrome, 1234321, true);
 testPalindrome(palindrome, "Trurt", true);
