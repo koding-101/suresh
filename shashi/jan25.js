@@ -2,7 +2,7 @@
 
 str = "Eva, can I see bees in a cave?"
 
-const palindrome = str => {
+const isPalindrome = str => {
   let strNew;
   if (typeof str === "number") {
     strNew = str.toString();
@@ -20,4 +20,4 @@ const palindrome = str => {
   return true;
 }
 
-console.log(palindrome(str));
+console.log(isPalindrome(str));
