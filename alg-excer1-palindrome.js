@@ -1,5 +1,5 @@
 function palindrome(input) {
-  var regExp = /[^A-za-z0-9]/g;
+  var regExp = /[^A-Za-z0-9]/g;
   var str = input.toString().toLowerCase().replace(regExp,"");
   var strLength = str.length;
 
@@ -20,6 +20,15 @@ function checkPalindrome(palindrome) {
   }
 }
 
+checkPalindrome(palindrome("mom"));
+checkPalindrome(palindrome("I did, did I"));
+checkPalindrome(palindrome("Step on no pets"));
 checkPalindrome(palindrome("S!A a!s"));
-
+checkPalindrome(palindrome("No lemon, no melon"));
 checkPalindrome(palindrome(345543));
+checkPalindrome(palindrome("7/17/17"));
+checkPalindrome(palindrome("not a palindrome"));
+checkPalindrome(palindrome("A"));
+checkPalindrome(palindrome(0));
+checkPalindrome(palindrome(1232));
+checkPalindrome(palindrome("My age is 0, 0 si ega ym"));
