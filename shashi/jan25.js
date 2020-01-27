@@ -4,8 +4,8 @@ const isPalindrome = str => {
   if (typeof str === "number") {
     strNew = str.toString();
   }
-  if (str.length === 1 || str.length === "" || str === " ") {
-    return -1;
+  if (str.length === 1) {
+    return true;
   }
   strNew = (str.split(" ")).join("").toLowerCase();
 
@@ -26,9 +26,8 @@ var palindromeData = {
   1234567654321: true,
   12341234: false,
   "not a plaindrome": false,
-  "a": -1,
-  1: -1,
-  " ": -1
+  "a": true,
+  1: true
 };
 
 //function that checks if given string is palindrome or not
@@ -37,7 +36,7 @@ const verifyPalindrome = (fn, obj) => {
     console.log("String is", str);
     let palindromeCheck = fn(str);
     console.log("palindromeCheck is", palindromeCheck);
-    if (palindromeCheck == obj[str]) {
+    if (palindromeCheck === obj[str]) {
       console.log("palindrome check success");
     } else {
       console.log("palindrome check failed");
