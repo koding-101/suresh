@@ -3,15 +3,17 @@
  ***************************************************/
 const palindrome = inputQuery => {
 
-  //If number convert to string
+  let count;  
+  let midStrLen;
+
   if (typeof inputQuery === "number"){
     inputQuery = inputQuery.toString();
   }
   else {
     inputQuery = inputQuery.toLowerCase().replace(/\W|_/g, "");   
   }
-  let count = inputQuery.length;
-  let midStrLen = (count - 1) / 2;
+  count = inputQuery.length;
+  midStrLen = (count - 1) / 2;
 
   for (var i = 0; i <= midStrLen; i++){
     if (inputQuery[i] !== inputQuery[count-1-i]){
@@ -24,7 +26,7 @@ const palindrome = inputQuery => {
 //Function to call main function and test different cases
 const testPalindrome = (fn, query, expect) => {
   const result = fn(query);
-  console.log((result === expect)? true : false); 
+  console.log(result === expect); 
 }
 
 //Call tester function with test cases and expected result
