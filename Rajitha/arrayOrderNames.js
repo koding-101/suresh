@@ -36,14 +36,8 @@ const getSocietyName = arr => {
 
 //Test function
 const testSocietyName = (arr, expectedName) => {
-  if (sortNames(arr) === expectedName){
-      console.log("Test pass");
-  }
-  else{
-      console.log("Test fail");
-  }
+  console.log(sortNames(arr) === expectedName? "Test pass": "Test fail");
 }
-
 
 testSocietyName(["Banana", "Apple", "Pear", "Carrot"], "ABCP");
 testSocietyName(["Banana", "Apple", "Pear", "Carrot", "Dog", "Queen", "Lion"], "ABCDLPQ");
