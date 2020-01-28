@@ -1,0 +1,91 @@
+.topnav {
+  background-color: white;
+}
+.toplinks {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 250;
+  opacity: 0.90;
+  margin: 8px;
+  top: 10px;
+  text-align: left;
+     
+}
+a:hover{
+  text-decoration: underline;
+}
+.nav-right {
+    float: right;
+  }
+.center {
+  margin: 10px auto 15px;
+  margin-top: 150px;
+  display: block;
+  width: 17%;
+}
+.textarea {
+  background-color: white;
+}
+.textinput {
+  display: block;  
+  width: 33%;
+  padding: 12px 14px;
+  text-indent:20px;
+  margin:auto;
+  border: 1px solid #c7c6c6;
+  border-radius: 20px;
+  background-image: url('./searchicon.jpeg');
+  background-position: 5px 5px; 
+  background-size: 4%; 
+  background-repeat: no-repeat;
+}
+input:hover {
+  outline: none;
+  box-shadow: 0px 0px 4px #a4a7a8;
+  border: 1px solid #c7c6c6;
+  border-radius: 20px;
+}
+.buttonHolder {
+   text-align: center;
+   background-color: white;
+}
+.display {  
+  width: 140px;
+  padding: 10px 14px;
+  margin-top: 20px;
+  margin-right: 6px;
+  border-radius: 5px;
+  border: none;
+  color: #444646;
+  font-size: 14px;
+  background-color: #ececf0;
+}
+.buttonHolder input[type="submit"]:hover {
+  outline: none;
+  box-shadow: 0px 0px 4px #a4a7a8;
+  border: 1px solid #c7c6c6;
+  border-radius: 5px;  
+}
+.bottomnav {
+  background-color: #e9e7e7;
+  position: fixed;
+  overflow: hidden; 
+  width: 100%;   
+  border: 1px solid #d1d0d0;
+  opacity: 0.60;
+  bottom: 0;
+}
+.bottomlinks {
+  float: left;
+  display: block;  
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  padding: 14px 16px;
+  opacity: 1.00;
+  text-align: left;  
+}
+a:hover {
+  text-decoration: underline;
+}
