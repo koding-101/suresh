@@ -10,26 +10,28 @@ const sortNames = arr => {
   let firstName;
   let secondName;
   let tempName;
-  for (let i = 0; i <= arr.length-2; i++){
-    firstName = arr[i].toLowerCase().charCodeAt(0);  
-    for (let j = i+1; j <= arr.length-1; j++){
-      secondName = arr[j].toLowerCase().charCodeAt(0);
+  let testArray = arr.concat();
+
+  for (let i = 0; i <= testArray.length-2; i++){
+    firstName = testArray[i].toLowerCase().charCodeAt(0);  
+    for (let j = i+1; j <= testArray.length-1; j++){
+      secondName = testArray[j].toLowerCase().charCodeAt(0);
       if (firstName > secondName){
-        tempName = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tempName;
+        tempName = testArray[i];
+        testArray[i] = testArray[j];
+        testArray[j] = tempName;
         firstName = secondName;
       }
     }
   }
-  return (getSocietyName(arr));
+  return (getSocietyName(testArray));
 }
 
 //Get first characters of each array and append them to form the Society Name
-const getSocietyName = arr => {
+const getSocietyName = testArray => {
   let societyName = "";
-  for (let i = 0; i <= arr.length-1; i++){
-    societyName += arr[i].charAt(0);
+  for (let i = 0; i <= testArray.length-1; i++){
+    societyName += testArray[i].charAt(0);
   }
   return societyName;
 }
