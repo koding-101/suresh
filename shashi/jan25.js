@@ -27,7 +27,12 @@ var palindromeData = {
   12341234: false,
   "not a plaindrome": false,
   "a": true,
-  1: true
+  1: true,
+  " ": false,
+  " aaa": true,
+  "A a A": true,
+  "123 A 321": true,
+  "a a a   ": true
 };
 
 //function that checks if given string is palindrome or not
@@ -42,6 +47,6 @@ const verifyPalindrome = (fn, obj) => {
       console.log("palindrome check failed");
     }
   }
-}
+} 
 
 verifyPalindrome(isPalindrome, palindromeData);

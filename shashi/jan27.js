@@ -7,13 +7,15 @@
 
 function secretSocityName(arr) {
   var teamName = "";
-  arr.sort().forEach(name => {
-    teamName = teamName + name.charAt(0);
-  })
-  return teamName;
+  
+  const reducer = (accumulator, currentValue) => accumulator + currentValue.charAt(0);
+  
+  return (teamName = arr.sort().reduce(reducer, ""));
+  
 }
 
 function testName(arr, expName) {
+  console.log("fn returns: ", secretSocityName(arr));
   if (secretSocityName(arr) === expName) {
     console.log("Generated name is correct!");
   } else {
