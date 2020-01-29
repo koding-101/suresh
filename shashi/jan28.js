@@ -3,15 +3,15 @@
 //Only string input
 //No numbers
 
-var vowels=["a", "e", "i", "o", "u"];
+var vowels = ["a", "e", "i", "o", "u"];
 
-function removeVowels (str=""){
+function removeVowels(str = "") {
   var newStr = "";
-  for(let i=0;i<str.length;i++){
-    for(let j=0;j<vowels.length;j++){
-      if(str[i].toLowerCase()===vowels[j]){
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 0; j < vowels.length; j++) {
+      if (str[i].toLowerCase() === vowels[j]) {
         break;
-      } else if(j === vowels.length-1){
+      } else if (j === vowels.length - 1) {
         newStr += str[i];
       }
     }
@@ -19,9 +19,9 @@ function removeVowels (str=""){
   return newStr;
 }
 
-function testRemoveVowelFuntion(fn, str, expectedOutput){
+function testRemoveVowelFuntion(fn, str, expectedOutput) {
   console.log("fn output:", fn(str));
-  (fn(str) === expectedOutput)? console.log("Expected Output!"):console.log("Incorrect Output :(");
+  (fn(str) === expectedOutput) ? console.log("Expected Output!") : console.log("Incorrect Output :(");
 }
 var string;
 
@@ -36,10 +36,10 @@ testRemoveVowelFuntion(removeVowels, " ", " ");
 testRemoveVowelFuntion(removeVowels, string, "");
 
 //same function with filter:
-function secondRemoveVowels (str){
+function secondRemoveVowels(str) {
   var newStr = "";
   var strArr = str.split("");
-  newStr = strArr.filter(c => ('aeiou'.includes(c.toLowerCase()))? newStr: newStr+c);
+  newStr = strArr.filter(c => ('aeiou'.includes(c.toLowerCase())) ? newStr : newStr + c);
   str = newStr.join("")
   return str;
 }
