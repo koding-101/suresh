@@ -2,24 +2,18 @@
 //Assumptions:
 //Input string only
 
-var string;
-
-function capToFront (str){
+function capToFront(str) {
   var caps = "";
   var nonCaps = "";
-  for(let i=0;i<str.length;i++){
-    if(str[i] !== str[i].toLowerCase()){
-      caps+=str[i];
-    }else {
-      nonCaps+=str[i]
-    }
+  for (let i = 0; i < str.length; i++) {
+    str[i] !== str[i].toLowerCase() ? caps += str[i] : nonCaps += str[i];
   }
-  return caps+nonCaps;
+  return caps + nonCaps;
 }
 
-function testCapsFrontFun(string, expected){
+function testCapsFrontFun(string, expected) {
   var actual = capToFront(string);
-  actual===expected? console.log(`expected ${expected} is same as actual ${actual}!`): console.log(`expected ${expected} is NOT same as actual ${actual}:(`);
+  actual === expected ? console.log(`expected ${expected} is same as actual ${actual}!`) : console.log(`expected ${expected} is NOT same as actual ${actual}:(`);
 }
 
 testCapsFrontFun("hApPy", "APhpy");
