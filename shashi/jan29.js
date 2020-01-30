@@ -31,3 +31,5 @@ testCapsFrontFun("12345678", "12345678");
 testCapsFrontFun("&%$SPecial CHAr", "SPCHA&%$ecial r");
 testCapsFrontFun("", "");
 testCapsFrontFun(" ", " ");
+testCapsFrontFun(" AaBb Cc DD e", "ABCDD ab c  e");
+testCapsFrontFun("cki DoFkl  ", "DFcki okl  ");
