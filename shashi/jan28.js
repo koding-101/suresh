@@ -4,16 +4,20 @@
 //No numbers
 
 var vowels = ["a", "e", "i", "o", "u"];
+function isVowel(char){
+  for (let i = 0; i < vowels.length; i++) {
+    if (char.toLowerCase() === vowels[i]) {
+      return true;
+    } 
+  }
+  return false;
+}
 
 function removeVowels(str = "") {
   var newStr = "";
   for (let i = 0; i < str.length; i++) {
-    for (let j = 0; j < vowels.length; j++) {
-      if (str[i].toLowerCase() === vowels[j]) {
-        break;
-      } else if (j === vowels.length - 1) {
-        newStr += str[i];
-      }
+    if(!isVowel(str[i])){
+      newStr+=str[i];
     }
   }
   return newStr;
@@ -21,7 +25,7 @@ function removeVowels(str = "") {
 
 function testRemoveVowelFuntion(fn, str, expectedOutput) {
   console.log("fn output:", fn(str));
-  (fn(str) === expectedOutput) ? console.log("Expected Output!") : console.log("Incorrect Output :(");
+  (fn(str) === expectedOutput) ? console.log(`Expected Output :)`) : console.log(`Expected Output ${expectedOutput} is NOT same actual ${fn(str)}!`);
 }
 var string;
 
@@ -34,6 +38,9 @@ testRemoveVowelFuntion(removeVowels, "1234567 is vowels with numbers", "1234567 
 testRemoveVowelFuntion(removeVowels, "", "");
 testRemoveVowelFuntion(removeVowels, " ", " ");
 testRemoveVowelFuntion(removeVowels, string, "");
+testRemoveVowelFuntion(removeVowels, "aeiou", "");
+testRemoveVowelFuntion(removeVowels, " aeiou", " ");
+testRemoveVowelFuntion(removeVowels, "aeiou ", " ");
 
 //same function with filter:
 function secondRemoveVowels(str) {
@@ -52,4 +59,7 @@ testRemoveVowelFuntion(secondRemoveVowels, "checking with special char %$(", "ch
 testRemoveVowelFuntion(secondRemoveVowels, "1234567 is vowels with numbers", "1234567 s vwls wth nmbrs")
 testRemoveVowelFuntion(secondRemoveVowels, "", "");
 testRemoveVowelFuntion(secondRemoveVowels, " ", " ");
+testRemoveVowelFuntion(secondRemoveVowels, "aeiou", "");
+testRemoveVowelFuntion(secondRemoveVowels, " aeiou", " ");
+testRemoveVowelFuntion(secondRemoveVowels, "aeiou ", " ");
 //testRemoveVowelFuntion(secondRemoveVowels, string, "");// this throws a type error, not sure how to fix that.

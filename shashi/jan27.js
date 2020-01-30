@@ -3,7 +3,7 @@
 //No Numeric values
 //No special characters
 //No Empty names
-//Any case names
+//Case of the 1st letter is case sensitive
 
 function secretSocityName(arr) {
   var teamName = "";
