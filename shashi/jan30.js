@@ -36,6 +36,7 @@ function canNest(arr1, arr2) {
   return false;
 }
 
+//test functions
 function testCanNest(fn, arr1, arr2, expected) {
   fn(arr1, arr2) === expected ? console.log(`canNest check success`) : console.log(`canNest check failed`);
 }
@@ -49,7 +50,7 @@ testCanNest(canNestReduce, [0], [0, 0], false);
 testCanNest(canNestReduce, [1], [1], false);
 testCanNest(canNestReduce, [5, 9], [3, 13], true);
 testCanNest(canNestReduce, [-1], [0], false);
-testCanNest(canNestReduce, [-8, -13], [-5, -19], true );
+testCanNest(canNestReduce, [-8, -13], [-5, -19], true);
 
 
 testCanNest(canNest, [1, 2, 3, 4], [0, 6], true);
@@ -61,4 +62,4 @@ testCanNest(canNest, [0], [0, 0], false);
 testCanNest(canNest, [1], [1], false);
 testCanNest(canNest, [5, 9], [3, 13], true);
 testCanNest(canNest, [-1], [0], false);
-testCanNest(canNest, [-8, -13], [-5, -19], true );
+testCanNest(canNest, [-8, -13], [-5, -19], true);
