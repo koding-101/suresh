@@ -44,10 +44,9 @@ testArrayNested([1, 2, 3, 4], [0, 6], true);
 testArrayNested([3, 1], [4, 0], true);
 testArrayNested([3, 9, 8, 6, 4], [3, 7], false);
 testArrayNested([9, 2, 8], [7, 9], false);
-testArrayNested([9, 9, 8], [8, 9], false);
-testArrayNested([9, 9, 8], [8, 9], false);
-testArrayNested([9, 9, 8], [8, 9], false);
-testArrayNested([9, 9, 8], [8, 9], false);
-testArrayNested([9, 9, 8], [8, 9], false);
-testArrayNested([9, 9, 8], [8, 9], false);
-
+testArrayNested([9, , 7, 6,], [3, 3, 4], false);
+testArrayNested([4, 4], [2, 8], true);
+testArrayNested([3], [2, 5], true);
+testArrayNested([3], [3], false);
+testArrayNested([-2], [0], false);
+testArrayNested([-8, -3, -4], [-1, -9], true);
