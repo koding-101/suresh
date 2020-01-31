@@ -47,9 +47,9 @@ const testNestArray = (arr1, arr2, expected) => {
 }
 
 console.log(testNestArray([3, 2, 4, 7, 8, 5], [5, 9, 1, 6, 2], true));
-console.log(testNestArray([3, 1, 4, 7, 8, 5], [5, 9, 1, 6, 2], false));
-console.log(testNestArray([3, 2, 4, 7, 8, 5], [5, 8, 1, 6, 2], false));
-console.log(testNestArray([3, 2, 4, 7, 8, 5], [5, 9,  , 6, 2], false));
+console.log(testNestArray([3, 1, 4, 7, 8, 5], [5, 9, 1, 6, 2], false)); //Same min value
+console.log(testNestArray([3, 2, 4, 7, 8, 5], [5, 8, 1, 6, 2], false)); //Same max value
+console.log(testNestArray([3, 2, 4, 7, 8, 5], [5, 9,  , 6, 2], false)); //Empty value
 console.log(testNestArray([3, 1], [4, 0], true));
 console.log(testNestArray([9, 9, 8], [8, 9], false));
 console.log(testNestArray([1, 2, 3, 4], [2, 3], false));
