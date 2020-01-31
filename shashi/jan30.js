@@ -10,13 +10,13 @@
 
 ///using reduce
 function maxArrValue(arr) {
-  return max = arr.reduce(function (a, b) {
-    return Math.max(a, b);
+  return arr.reduce(function (a, b) {
+     return Math.max(a, b);
   });
 }
 
 function minArrValue(arr) {
-  return max = arr.reduce(function (a, b) {
+  return arr.reduce(function (a, b) {
     return Math.min(a, b);
   });
 }
