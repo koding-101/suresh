@@ -11,22 +11,23 @@
 * canNest([1, 2, 3, 4], [2, 3]) ➞ false
 ****************************************************************************/
 const canArrayNest = (arr1, arr2) => {
-  let tArr1  = [...arr1];
-  let tArr2  = [...arr2];;  
-  let tArr1Min = tArr1[0];
-  let tArr1Max = tArr1[0];
-  let tArr2Min = tArr2[0];
-  let tArr2Max = tArr2[0];
+  let tArr1  = arr1;
+  let tArr2  = arr2;
+  let tArr1Min;
+  let tArr1Max;
+  let tArr2Min;
+  let tArr2Max;
 
-  tArr1Min = getArrVal(tArr1, tArr1Min, "min");
-  tArr1Max = getArrVal(tArr1, tArr1Max, "max");
-  tArr2Min = getArrVal(tArr2, tArr2Min, "min");
-  tArr2Max = getArrVal(tArr2, tArr2Max, "max");
+  tArr1Min = getArrVal(tArr1, "min");
+  tArr1Max = getArrVal(tArr1, "max");
+  tArr2Min = getArrVal(tArr2, "min");
+  tArr2Max = getArrVal(tArr2, "max");
 
   return ((tArr1Min > tArr2Min) && (tArr1Max < tArr2Max))
 }
 
-const getArrVal = (tArr, tArrNum, str) =>{
+const getArrVal = (tArr, str) =>{
+  let tArrNum = tArr[0]; 
   for (let i = 1; i <= tArr.length; i++){
     if (str === "min"){
       if (tArrNum > tArr[i]){
