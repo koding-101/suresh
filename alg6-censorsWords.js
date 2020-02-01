@@ -12,7 +12,6 @@ const censorsWord = str => {
   var inputStr = str.split(" ");
 
   for (var i = 0; i < inputStr.length; i++) {
-
     if (inputStr[i].length > 4){
       inputStr[i] = makeCensorWord(inputStr[i].length);
     }
