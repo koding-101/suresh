@@ -1,3 +1,5 @@
+/*Determine whether a given input is a palindrome. For ex: An integer is a palindrome when it reads the same backward as forward.*/
+
 function palindrome(input) {
   var regExp = /[^A-Za-z0-9]/g;
   var str = input.toString().toLowerCase().replace(regExp,"");
