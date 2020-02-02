@@ -1,8 +1,7 @@
 import { test } from "./helpers/test";
 
-function indexOf(strArr, find, start) {
+function indexOf(strArr, find, fromIndex = 0) {
   //make sure starting index is greater than 0 and is a whole number;
-  const startIndex = start > 0 ? Math.ceil(start) : 0;
   if (typeof strArr === "string" )  {
     if (find === "" || Array.isArray(find)) {
       return 0;
@@ -11,12 +10,12 @@ function indexOf(strArr, find, start) {
     if (typeof find !== "string") {
       return -1
     }
-
+    const startIndex = fromIndex > 0 ? Math.ceil(fromIndex) : 0;
     let firstIndexMatched = -1;
     let currentFindIndex = 0;
     for (let i = startIndex; i < strArr.length; i++ ) {
       //find matched;
-        if (strArr[i] === find[currentFindIndex]) {
+      if (strArr[i] === find[currentFindIndex]) {
         if (firstIndexMatched === -1) {
           firstIndexMatched = i;
         } 
@@ -37,9 +36,17 @@ function indexOf(strArr, find, start) {
     return firstIndexMatched;
   }
 
-  for (let i = startIndex; i < strArr.length; i++ ) {
-    if (strArr[i] === find) {
-      return i;
+  if (fromIndex < 0) {
+    for (let i = strArr.length + fromIndex; i < strArr.length; i++ ) {
+      if (strArr[i] === find) {
+        return i;
+      }
+    }
+  } else {
+    for (let i = startIndex; i < strArr.length; i++ ) {
+      if (strArr[i] === find) {
+        return i;
+      }
     }
   }
   return -1;
@@ -67,6 +74,8 @@ testIndexOf(" supercalifragilisticexpialidocious ", " ");
 testIndexOf(" supercalifragilisticexpialidocious ", " ", 1);
 testIndexOf("abcdefgabc", "abc");
 testIndexOf("abcdefgabc", "abc", 1);
+testIndexOf("abcdefgabc", "abc", -1);
+testIndexOf("abcdefgabc", "abc", -100);
 
 
 const superInArray = ["s", "u", "p", "e", "r", "c", "a", "l", "i", "f", "r", "a", "g", "i", "l", "i", "s", "t", "i", "c", "e", "x", "p", "i", "a", "l", "i", "d", "o", "c", "i", "o", "u", "s"];
@@ -87,6 +96,10 @@ testIndexOf([" ", "s", "u", "p", "e", "r", " "], " ");
 testIndexOf([" ", "s", "u", "p", "e", "r", " "], " ", 1);
 testIndexOf(["abc","defg", "abc"], "abc");
 testIndexOf(["abc","defg", "abc"], "abc", 1);
+testIndexOf(["abc","defg", "abc"], "abc", -1);
+testIndexOf(["abc","defg", "abc"], "abc", -2);
+testIndexOf(["abc","defg", "abc"], "abc", -3);
+testIndexOf(["abc","defg", "abc"], "abc", -100);
 testIndexOf([1,"defg", "abc"], 1);
 testIndexOf([1,"defg", 1], 1, 1);
 testIndexOf([1,"defg", 1, undefined], undefined);
