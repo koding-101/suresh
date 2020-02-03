@@ -14,14 +14,14 @@ function censor(string) {
   var word = "";
   var newWord = "";
   for (var i = 0; i <= string.length; i++) {
-    if (string[i] != " " && i < string.length){
+    if (string[i] != " " && i < string.length) {
       word += string[i];
     } else if (i < string.length - 1) {
       newWord = convertWord(word);
-      finalString += newWord+" "
+      finalString += newWord + " "
       newWord = "";
       word = "";
-    } 
+    }
     else {
       newWord = convertWord(word);
       finalString += newWord
@@ -30,10 +30,10 @@ function censor(string) {
   return finalString;
 }
 
-function convertWord(word){
+function convertWord(word) {
   var newWord = "";
-  if(word.length > 4 ){
-    for(let i=0; i <= word.length-1; i++){
+  if (word.length > 4) {
+    for (let i = 0; i <= word.length - 1; i++) {
       newWord += "*";
     }
     return newWord;
@@ -42,8 +42,8 @@ function convertWord(word){
 }
 
 
-function testCensor(string, expected){
-  (censor(string) === expected)? console.log("Word censor is correct"): console.log(`Word cendor failed, expected "${expected}" but got "${censor(string)}"`);
+function testCensor(string, expected) {
+  (censor(string) === expected) ? console.log("Word censor is correct") : console.log(`Word cendor failed, expected "${expected}" but got "${censor(string)}"`);
 }
 
 testCensor("The code is fourty", "The code is ******");
