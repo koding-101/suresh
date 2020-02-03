@@ -22,6 +22,8 @@ const canNest = (arr1, arr2) => {
     let min = arr[0];
 
     for (let i = 1; i < arr.length; i++) {
+      //"else if" statement is slightly more efficient than to get max and min separately - IMO 
+      //if "arr[i] < min" true then "arr[i] > max" will not run, saving one iteration check.
       if (arr[i] < min) {
         min = arr[i]
       } else if (arr[i] > max) {
@@ -35,6 +37,7 @@ const canNest = (arr1, arr2) => {
     }
   }
 
+  //get max min number separately to avoid additional calculations if only one iteration with longest array.
   const { min1, max1 } = getMaxMin(arr1, 1);
   const { min2, max2 } = getMaxMin(arr2, 2);
 

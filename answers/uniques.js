@@ -13,6 +13,9 @@ function uniques(arr) {
   const result = [];
 
   for (let i = 0; i < arr.length; i++) {
+    //store all found val in an object,
+    //if value is in the object on the next iteration then
+    //skip else add to array and object.
     const currentVal = arr[i];
     if (!addedItems[currentVal]) {
       addedItems[currentVal] = true;

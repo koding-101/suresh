@@ -16,25 +16,36 @@ function split(str, delimiter) {
   let delimiterWord = "";
   let delimiterIndex = 0;
   for (let i = 0; i < str.length; i++ ) {   
+    //reset if doesn't match entire delimiter eg. 
+    //delimiter = "abc"
+    //found "abZ" resets on "Z"
      if (
         str[i] != delimiter[delimiterIndex]
         && delimiterIndex > 0
     ) {
+      //since not complete delimiter value, add values back to "word"
       word += delimiterWord;
       delimiterWord = "";
       delimiterIndex = 0;
     }
+
+    //Found matching delimiter value;
     if (str[i] === delimiter[delimiterIndex]) {
+      //if found all delimited values then
+      //add word to result and reset values
       if (delimiterIndex === delimiter.length-1) {
         result.push(word);
-       word = "";
+        word = "";
         delimiterWord = "";
         delimiterIndex = 0;
       } else {
+        //not all delimited values found.
+        //save found delimited values, in case not complete delimited values.
         delimiterWord += str[i];
         delimiterIndex++
       }
     } else {
+      //keep adding value to word until a delimited value is found.
        word += str[i];
     }
   }

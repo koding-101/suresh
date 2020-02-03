@@ -12,9 +12,13 @@ function alternateArrays (array1, array2) {
   const result = [];
   const isArray1Shortest = array1.length <  array2.length;
   const shortestArraylength = isArray1Shortest ? array1.length :  array2.length;
+
+  //add the shortest item's values into a new array.
   for (let i = 0; i < shortestArraylength; i++) {
     result.push(array1[i], array2[i])
   }
+
+  //add the rest of the items from the longest array.
   if(isArray1Shortest) {
     for (let i = array1.length; i < array2.length; i++) {
       result.push(array2[i])
