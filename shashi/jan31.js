@@ -13,20 +13,18 @@ function censor(string) {
   var finalString = "";
   var word = "";
   var newWord = "";
-  for (var i = 0; i <= string.length; i++) {
-    if (string[i] != " " && i < string.length) {
+  for (var i = 0; i < string.length; i++) {
+    if (string[i] != " ") {
       word += string[i];
-    } else if (i < string.length - 1) {
+    } else {
       newWord = convertWord(word);
       finalString += newWord + " "
       newWord = "";
       word = "";
     }
-    else {
-      newWord = convertWord(word);
-      finalString += newWord
-    }
   }
+  newWord = convertWord(word);
+  finalString += newWord
   return finalString;
 }
 
