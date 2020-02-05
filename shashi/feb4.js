@@ -9,7 +9,7 @@
 
 //Assumptions:
 //Input is a string
-//functction returns true if string has specified or more count consequtive same character 
+//functction returns true if string has specified or more count consecutive same character 
 
 function doubleLetters(string, count) {
   var counter = 1;
