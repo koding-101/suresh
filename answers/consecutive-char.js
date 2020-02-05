@@ -15,8 +15,8 @@ function consecutiveChar(str, count) {
   let numCharMatched = 1; //taken from shashi!
 
   for (let i = 1; i <= str.length; i++) {
-    numCharMatched++
     if (str[i] === str[i - 1]) {
+      numCharMatched++
       if (numCharMatched === count) {
         return true;
       } 
