@@ -1,4 +1,4 @@
-import { testArray } from "./helpers/test";
+import { testArray } from "./helpers/test.js";
 
 //implement Array.prototype.split
 function split(str, delimiter) {

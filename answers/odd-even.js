@@ -1,4 +1,4 @@
-import { testArray } from "./helpers/test";
+import { testArray } from "./helpers/test.js";
 
 //write a function that returns all odd numbers - [1,5]
 //values will always be numbers.

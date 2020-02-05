@@ -1,4 +1,4 @@
-import { testArray } from "./helpers/test";
+import { testArray } from "./helpers/test.js";
 
 //write a function that alternates items in each array - [1,6,2,7,3,8,4,9,5,10];
 //inputs are arrays

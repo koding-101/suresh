@@ -1,4 +1,4 @@
-import { test } from "./helpers/test";
+import { test } from "./helpers/test.js";
 
 // find vowels using object to store vowels
 const vowels = (str) => {

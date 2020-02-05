@@ -1,4 +1,4 @@
-import { testArray } from "./helpers/test";
+import { testArray } from "./helpers/test.js";
 
 //write a function that combines both arrays - [1,2,3,4,5,6,7,8,9,10]
 //inputs are arrays;

@@ -1,4 +1,4 @@
-import { test } from "./helpers/test";
+import { test } from "./helpers/test.js";
 
 function indexOf(strArr, find, fromIndex = 0) {
   //make sure starting index is greater than 0 and is a whole number;

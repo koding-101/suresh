@@ -1,4 +1,4 @@
-import { testArray } from "./helpers/test";
+import { testArray } from "./helpers/test.js";
 
 /* 1) Without using any built in functions, write a function to filter an array for unique values
 Input: [1,1,2,3,5,7,7,9]

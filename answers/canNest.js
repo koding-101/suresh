@@ -1,4 +1,4 @@
-import { test } from "./helpers/test";
+import { test } from "./helpers/test.js";
 
 /*
   Create a function that returns true if the first array can be nested inside the second.
