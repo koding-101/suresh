@@ -9,7 +9,7 @@
 
 //Assumptions:
 //Input is a string
-//functction returns true if string has specified or more count consecutive same character 
+//function returns true if string has specified or more count consecutive same character 
 
 function doubleLetters(string, count) {
   var counter = 1;
@@ -44,4 +44,4 @@ testDoubleLetters("this haaas some wooooords", 3, true);
 testDoubleLetters("this haaas some wooooords", 7, false);
 testDoubleLetters("12333444445555555555", 6, true);
 testDoubleLetters("somechar$$$$$", 5, true);
-//testDoubleLetters("", 1, false);
+testDoubleLetters("", 1, false);
