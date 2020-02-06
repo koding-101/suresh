@@ -29,16 +29,32 @@ function getTotalPrice(array) {
   return totalPrice;
 }
 
+//using reduce
 
-function testGetTotalPrice(input, expected){
-  console.log(getTotalPrice(input));
-  console.log(getTotalPrice(input)===expected ? "pass": "fail");
+function getTotalPriceReduce (array) {
+  const reducer = (acc, cur) => acc += cur.quantity*cur.price;
+  return array.reduce(reducer, 0);
 }
-testGetTotalPrice([{ product: "Milk", quantity: 1, price: 1.50 },
+
+
+function testGetTotalPrice(fn, input, expected){
+  console.log(fn(input)===expected ? "pass": "fail");
+}
+
+testGetTotalPrice(getTotalPriceReduce, [{ product: "Milk", quantity: 1, price: 1.50 },
 { product: "Cereals", quantity: 1, price: 2.50 }], 4);
-testGetTotalPrice([{ product: "Milk", quantity: 1, price: 1.50 },
+testGetTotalPrice(getTotalPriceReduce, [{ product: "Milk", quantity: 1, price: 1.50 },
 { product: "Cereals", quantity: 1, price: 2.50 },
 { product: "Bread", quantity: 3, price: 2.50 }], 11.5);
-testGetTotalPrice([{ product: "Milk", quantity: 1.5, price: 2 },
+testGetTotalPrice(getTotalPriceReduce, [{ product: "Milk", quantity: 1.5, price: 2 },
+{ product: "Cereals", quantity: 1, price: 2.50 },
+{ product: "Bread", quantity: 3, price: 2.50 }], 13);
+
+testGetTotalPrice(getTotalPrice, [{ product: "Milk", quantity: 1, price: 1.50 },
+{ product: "Cereals", quantity: 1, price: 2.50 }], 4);
+testGetTotalPrice(getTotalPrice, [{ product: "Milk", quantity: 1, price: 1.50 },
+{ product: "Cereals", quantity: 1, price: 2.50 },
+{ product: "Bread", quantity: 3, price: 2.50 }], 11.5);
+testGetTotalPrice(getTotalPrice, [{ product: "Milk", quantity: 1.5, price: 2 },
 { product: "Cereals", quantity: 1, price: 2.50 },
 { product: "Bread", quantity: 3, price: 2.50 }], 13);
