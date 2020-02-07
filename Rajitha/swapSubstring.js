@@ -24,7 +24,7 @@ const swapTwo = str => {
   }
 
   if (leftOver > 0) {
-    outputStr += str.substr(strLength-strLength*4);
+    outputStr += str;
   }
   return outputStr;
 }
@@ -41,8 +41,8 @@ const testSwapTwo = (str, expected) => {
 testSwapTwo("ABC", "ABC");
 testSwapTwo("ABCD", "CDAB");
 testSwapTwo("ABCDEFGH", "CDABGHEF");
+testSwapTwo("ABCDEFG", "CDABEFG");
 testSwapTwo("munchkins", "ncmuinhks");
 testSwapTwo("AABBCCDDEEFF", "BBAADDCCFFEE");
 testSwapTwo("FFGGHHI", "GGFFHHI");
 testSwapTwo("This is kilo weight", "isThs  ilokiei wght");
-    
