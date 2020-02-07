@@ -11,24 +11,24 @@
 const swapTwo = (string) => {
   var newStr = "";
   var remChars = string.length % 4;
-  for(let i=0;i<(string.length - remChars);i+=4){
-    newStr+=string[i+2]+string[i+3]+string[i]+string[i+1];
+  for (let i = 0; i < (string.length - remChars); i += 4) {
+    newStr += string[i + 2] + string[i + 3] + string[i] + string[i + 1];
   }
-  if(remChars!== 0) {
-  for(let i=string.length - remChars; i< string.length; i++){
-    newStr+=string[i];
+  if (remChars !== 0) {
+    for (let i = string.length - remChars; i < string.length; i++) {
+      newStr += string[i];
+    }
   }
-}
   return newStr;
 }
 
 const testswapTwo = (input, output) => {
-  console.log(swapTwo(input)=== output? "Pass":"fail");
+  console.log(swapTwo(input) === output ? "Pass" : "fail");
 }
 
 testswapTwo("ABCDEFGH", "CDABGHEF");
 testswapTwo("AABBCCDDEEFF", "BBAADDCCFFEE");
-testswapTwo("munchkins","ncmuinhks");
+testswapTwo("munchkins", "ncmuinhks");
 testswapTwo(" ", " ");
 testswapTwo("", "");
 testswapTwo("#$&%**", "&%#$**");
