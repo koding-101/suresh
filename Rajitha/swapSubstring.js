@@ -26,6 +26,7 @@ const swapTwo = str => {
   if (leftOver > 0) {
     outputStr += str;
   }
+
   return outputStr;
 }
 
