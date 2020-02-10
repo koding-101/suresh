@@ -14,7 +14,7 @@ const arrayOfMultiples = (num, len) => {
   }
 
   for (var i = 1; i <= len; i++) {
-  	multiples.push(num * i)
+    multiples.push(num * i)
   }
   return multiples;
 }
