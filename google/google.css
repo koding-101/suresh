@@ -1,0 +1,101 @@
+.topnav {
+  background-color: white;
+  top: 16px;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topnavlinks {
+  text-decoration: none;
+  color: black;
+  font-weight: 250;
+  text-align: left;
+  opacity: 0.90;
+  margin: 8px;
+}
+.topnavlink {
+  text-align: center;
+  background-color: #4285f4;
+  font-weight: bold;
+  outline: none;
+  color: white;
+  width: 100px;
+  text-decoration: none;
+  margin-right: 25px;
+  padding: 7px 15px;
+  border-radius: 3px;
+}
+a:hover{
+  text-decoration: underline;
+}
+.nav-right {
+    float: right;
+  }
+.center {
+  margin: 10px auto 15px;
+  width: 17%;
+  margin-top: 150px;
+  display: block;
+}
+.textfield {
+  background-color: white;
+}
+.textbox {
+  display: block;  
+  width: 33%;
+  padding: 12px 14px;
+  background-image: url('./searchicon.png');
+  background-position: 5px 5px; 
+  background-size: 4%; 
+  background-repeat: no-repeat;
+  text-indent:20px;
+  margin:auto;
+  border: 1px solid #c7c6c6;
+  border-radius: 20px;
+}
+input:hover {
+  box-shadow: 0px 0px 4px #a4a7a8;
+  border: 1px solid #c7c6c6;
+  outline: none;
+  border-radius: 20px;
+}
+.buttonHolder {
+   text-align: center;
+   background-color: white;
+}
+.display {  
+  width: 140px;
+  border: none;
+  color: #444646;
+  padding: 10px 14px;
+  margin-top: 20px;
+  margin-right: 6px;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #ececf0;
+}
+.buttonHolder input[type="submit"]:hover {
+  outline: none;
+  box-shadow: 0px 0px 4px #a4a7a8;
+  border: 1px solid #c7c6c6;
+  border-radius: 5px;  
+}
+.bottomnav {
+  background-color: #e9e7e7;   
+  border: 1px solid #d1d0d0;
+  position: fixed;
+  overflow: hidden; 
+  width: 100%;
+  opacity: 0.60;
+  bottom: 0;
+}
+.bottomnavlinks {
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;  
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+  padding: 14px 16px;
+  opacity: 1.00;
+  text-align: left;  
+}
