@@ -15,7 +15,7 @@
 const matchWord = (str, letter) => {
   let cnt = 0;
   let tempWord = "";  
-  let obj = {};
+  const obj = {};
 
   for (let i = 0; i <= str.length; i++){
     if((str[i] !== " ") && (i !== str.length)){
@@ -23,8 +23,7 @@ const matchWord = (str, letter) => {
       if (str[i].toLowerCase() === letter.toLowerCase()){
         cnt++;
       }  
-    }
-    else  {
+    } else {
     obj[tempWord] = cnt;
     tempWord = "";
     cnt = 0;
