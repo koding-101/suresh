@@ -47,10 +47,9 @@ const checkChars = (str) => {
 }
 
 const compareObj = (obj1, obj2) => {
-  let result;  
   for (let prop in obj1) {
 	//Check property exists on both objects and values are equal
-	if ((obj1.hasOwnProperty(prop) !== obj2.hasOwnProperty(prop)) && (obj1[prop] !== obj2[prop])){
+	if ((obj1.hasOwnProperty(prop) !== obj2.hasOwnProperty(prop)) || (obj1[prop] !== obj2[prop])){
       return false;
     }
   }
@@ -70,4 +69,4 @@ testAnagram("Dave Barry", "Ray Adverb", true);
 testAnagram("Nope", "Note", false);
 testAnagram("Listen Trianlge", "Integral Silent", true);
 testAnagram("123HenRy$", "$H1en2Ry3", true);
-testAnagram("Can you check", "Nac Uoy Chek", false);
+testAnagram("Can you check", "Nac Uoy Cheka", false);
