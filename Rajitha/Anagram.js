@@ -19,7 +19,6 @@ const isAnagram = (str, anagram) => {
   } else {
       return false;  
   }
-  
 }
 
 const checkChars = (str) => {
@@ -29,16 +28,16 @@ const checkChars = (str) => {
   let strOccurance = 0;
   let strExists;
   let obj = {};
-
-    do {  
-      if (!obj.hasOwnProperty(str[index])){  
-        strExists = str.indexOf(str[index]);
-        while (strExists > -1 ) {   
-          strOccurance++;
-          count = strExists + 1;          
-          strExists = str.indexOf(str[index], count);
-        }    
-        obj[str[index]] = strOccurance;  
+  
+  do {  
+    if (!obj.hasOwnProperty(str[index])){  
+      strExists = str.indexOf(str[index]);
+      while (strExists > -1 ) {   
+        strOccurance++;
+        count = strExists + 1;          
+        strExists = str.indexOf(str[index], count);
+      }    
+      obj[str[index]] = strOccurance;  
       index++;
       count = 0;
       strOccurance = 0;
