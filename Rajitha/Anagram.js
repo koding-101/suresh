@@ -58,7 +58,7 @@ const compareObj = (obj1, obj2) => {
 }
 
 const testAnagram = (str, anagram, expected) => {
-  if(isAnagram("cristian", "Cristina") === expected){
+  if(isAnagram(str, anagram) === expected){
       console.log("You got it...")
   } else {
       console.log("Nooo.It's a miss...")
