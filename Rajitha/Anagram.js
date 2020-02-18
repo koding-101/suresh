@@ -15,8 +15,11 @@ const isAnagram = (str, anagram) => {
   if (str.length === anagram.length) {
     strObj = checkChars(str);
     anagObj = checkChars(anagram);
+    return (compareObj(strObj, anagObj));
+  } else {
+      return false;  
   }
-  return (compareObj(strObj, anagObj));
+  
 }
 
 const checkChars = (str) => {
@@ -70,3 +73,4 @@ testAnagram("Nope", "Note", false);
 testAnagram("Listen Trianlge", "Integral Silent", true);
 testAnagram("123HenRy$", "$H1en2Ry3", true);
 testAnagram("Can you check", "Nac Uoy Cheka", false);
+testAnagram("Check", "Chek", false);
